@@ -1,0 +1,10 @@
+{
+    // "python.defaultInterpreterPath": "/venv/Scripts/python.exe",
+    // "robot.python.executable": "${workspaceFolder}/venv/Scripts/python.exe",
+    "robot.python.env": {
+        "PYTHONPATH": "${workspaceFolder}/venv/Lib/site-packages"
+    },
+    "[robotframework]": {
+        "editor.defaultFormatter": "robocorp.robotframework-lsp"
+    }
+}
