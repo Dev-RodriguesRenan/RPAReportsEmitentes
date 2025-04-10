@@ -1,5 +1,7 @@
 import datetime
 import pyautogui
+from pywinauto import Desktop
+import time
 
 
 def press_keys(key1, key2):
@@ -16,10 +18,6 @@ def get_current_datetime():
 
 def write_text(text):
     pyautogui.write(text, interval=0.1)
-
-
-from pywinauto import Desktop
-import time
 
 
 def switch_to_fj_frigo():

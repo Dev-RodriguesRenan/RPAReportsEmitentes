@@ -38,8 +38,11 @@ Selecionar Emitentes
     Click    select_emitente_icon.png
 # Seleciona o campo cliente no submenu de emitentes
 Selecionar Cliente
-    Wait Until Screen Contain    drivers_icon.png    10
-    Click    drivers_icon.png
+    Wait Until Screen Contain    select_client_icon.png    10
+    Click    select_client_icon.png
+    # TODO: Descomentar o código abaixo quando for necessário testes com uma base menor 
+    # Wait Until Screen Contain    drivers_icon.png    10
+    # Click    drivers_icon.png
 # Aperta em confirmar após a keyword
 Confirmar
     Wait Until Screen Contain    yes_icon.png    12
@@ -88,6 +91,7 @@ Salvar Planilha
     Press Special Key    ENTER
     Espera o Excel Abrir
     Alt F4
+# Muda o foco para a janela do sistema FJ Frigo
 Switch Para Janela FJ Frigo
     ${status}=    Switch To FJ Frigo
     
