@@ -1,3 +1,3 @@
 *** Variables ***
-${fjfrigo_path}    C:\\FJFrigoClient\\fjfrigo.exe
 ${password}    franca@2023.
+${IMAGE_DIR}    C:\\Users\\PCVJ\\Downloads\\fjbot\\images

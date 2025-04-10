@@ -1,2 +1,8 @@
 venv
 .env
+__pycache__/
+results/
+log/
+*.xml
+Sikuli**
+*.html
