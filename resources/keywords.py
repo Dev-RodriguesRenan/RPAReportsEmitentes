@@ -25,8 +25,17 @@ def switch_to_fj_frigo():
     while True:
         windows = Desktop(backend="uia").windows()
         for win in windows:
-            if "FJFrigo" in win.window_text():
+            if "Atualização" in win.window_text():
+                win.set_focus()
+                time.sleep(0.5)
+                pyautogui.press("right")
+                pyautogui.press("enter")
+                continue
+            if (
+                "FJFrigo" in win.window_text()
+                and not "Atualização" in win.window_text()
+            ):
                 win.set_focus()
                 return True
-        time.sleep(3)
+        break
     return False
