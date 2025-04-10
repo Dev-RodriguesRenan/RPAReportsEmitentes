@@ -38,27 +38,29 @@ Selecionar Emitentes
     Click    select_emitente_icon.png
 # Seleciona o campo cliente no submenu de emitentes
 Selecionar Cliente
-    Wait Until Screen Contain    select_client_icon.png    10
-    Click    select_client_icon.png
+    Wait Until Screen Contain    drivers_icon.png    10
+    Click    drivers_icon.png
 # Aperta em confirmar após a keyword
 Confirmar
     Wait Until Screen Contain    yes_icon.png    12
     Click    yes_icon.png
 # Procura o botão de cancelar, enquanto ele existir o loop continua
-Procurar Cancelar
-    ${isCancel}    Exists    cancel_icon.png    8
+Procurar Icone
+    [Arguments]    ${icon}
+    ${isCancel}    Exists    ${icon}.png    10
     WHILE    ${isCancel} == 'True'
-        Sleep    3
-        ${isCancel}    Exists    cancel_icon.png    8
+        ${isCancel}    Exists    ${icon}.png    10
         IF    ${isCancel} == 'False'
+            Log    Cancelar encontrado
             BREAK
         END
+        Log    Cancelar não encontrado
     END
 # Aperta em exporta a planilha
 Exportar Planilha
     Wait Until Screen Contain    export_icon.png    12
     Click    export_icon.png
-    Procurar Cancelar
+    Procurar Icone    cancel_icon
 # Espera o Excel abrir
 Espera o Excel Abrir
     ${isExcel}    Exists    is_opened_excel_icon.png    8
@@ -71,6 +73,7 @@ Espera o Excel Abrir
     END
 # Abre o Excel
 Abrir o Excel
+    Procurar Icone    alert_excel_icon
     Wait Until Screen Contain    alert_excel_icon.png    10
     Click    alert_excel_icon.png
     Espera o Excel Abrir
@@ -85,14 +88,17 @@ Salvar Planilha
     Press Special Key    ENTER
     Espera o Excel Abrir
     Alt F4
+Switch Para Janela FJ Frigo
+    ${status}=    Switch To FJ Frigo
+    
+# Fecha o Sistema da Fj Frigo
 Fechar Sistema FJ Frigo
-    ${is_open}    Exists    fj_is_opened_icon.png    8
+    ${is_open}    Exists    fj_is_opened_icon.png    10
     IF    ${is_open} == 'True'
        Wait Until Screen Contain    fj_exit_icon.png    10
        Click    fj_exit_icon.png
     ELSE
-        Wait Until Screen Contain    fj_opened_icon.png    10
-        Click    fj_opened_icon.png
+        Switch Para Janela FJ Frigo
         Wait Until Screen Contain    fj_exit_icon.png    10
         Click    fj_exit_icon.png
     END 

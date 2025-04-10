@@ -11,7 +11,7 @@ Caso de Baixar Planilha
     Selecionar Emitentes
     Selecionar Cliente
     Confirmar
-    Procurar Cancelar
+    Procurar Icone    cancel_icon
     Exportar Planilha
     Abrir o Excel
     Salvar Planilha
