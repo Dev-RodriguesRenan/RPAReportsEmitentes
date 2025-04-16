@@ -13,6 +13,7 @@ Caso de Baixar Planilha
     Confirmar
     Procurar Icone    cancel_icon
     Exportar Planilha
+    Espera o Cancelar Desaparecer
     Abrir o Excel
     Salvar Planilha
     Fechar Sistema FJ Frigo

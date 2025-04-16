@@ -11,5 +11,6 @@
         "**/__pycache__": true,
         "**/Sikuli*": true,
         "**/*.xml": true
-    }
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash"
 }

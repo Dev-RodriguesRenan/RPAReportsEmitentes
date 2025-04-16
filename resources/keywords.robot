@@ -21,7 +21,8 @@ Abrir Sistema FJ Frigo
     Sleep    7    Espera 7s para contiar o processo
     Passar TAB    3
     Write Text    ${password}
-    Click    ok_icon.png
+    Passar TAB    1
+    Press Special Key    ENTER
 # Passa com a tecla TAB
 Passar TAB
     [Arguments]  ${qtd}
@@ -50,20 +51,25 @@ Confirmar
 # Procura o botão de cancelar, enquanto ele existir o loop continua
 Procurar Icone
     [Arguments]    ${icon}
-    ${isCancel}    Exists    ${icon}.png    10
-    WHILE    ${isCancel} == 'True'
-        ${isCancel}    Exists    ${icon}.png    10
-        IF    ${isCancel} == 'False'
-            Log    Cancelar encontrado
+    ${icon_exists}=    Exists    ${icon}.png    12
+    WHILE    ${icon_exists} == 'True'
+        Log    ${icon} não encontrado
+        ${icon_exists}=    Exists    ${icon}.png    12
+    END
+    Log    ${icon} encontrado
+Espera o Cancelar Desaparecer
+    ${cancel_icon}    Exists    cancel_icon.png    12
+    WHILE    ${cancel_icon} == 'True'
+        Log    ${cancel_icon} não encontrado
+        ${cancel_icon}    Exists    cancel_icon.png    12
+        IF    ${cancel_icon} == 'False'
             BREAK
         END
-        Log    Cancelar não encontrado
     END
 # Aperta em exporta a planilha
 Exportar Planilha
     Wait Until Screen Contain    export_icon.png    12
     Click    export_icon.png
-    Procurar Icone    cancel_icon
 # Espera o Excel abrir
 Espera o Excel Abrir
     ${isExcel}    Exists    is_opened_excel_icon.png    8
@@ -77,6 +83,7 @@ Espera o Excel Abrir
 # Abre o Excel
 Abrir o Excel
     Procurar Icone    alert_excel_icon
+    Sleep    10    Espera 10s para o excel abrir
     Wait Until Screen Contain    alert_excel_icon.png    10
     Click    alert_excel_icon.png
     Espera o Excel Abrir
