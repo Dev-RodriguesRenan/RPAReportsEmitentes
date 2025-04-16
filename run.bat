@@ -1,0 +1,1 @@
+C:\Users\use\Desktop\vjbots-robot-fjfrigo\venv\Scripts\python.exe -m robot -d results main.robot
