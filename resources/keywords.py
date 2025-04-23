@@ -1,4 +1,5 @@
 import datetime
+import os
 import pyautogui
 from pywinauto import Desktop
 import time
@@ -39,3 +40,9 @@ def switch_to_fj_frigo():
                 return True
         break
     return False
+
+def copy_file_cliente_base():
+    os.rename(
+        "C:\\Users\\use\\Documents\\cliente_base.xlsx",
+        "C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx",
+    )

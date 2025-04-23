@@ -93,8 +93,8 @@ Salvar Planilha
     Wait Until Screen Contain    resources_icon.png    10
     Click    resources_icon.png
     Wait Until Screen Contain    is_opened_explore_icon.png    15
-    ${data_hoje}    Get Current Datetime
-    Type With Modifiers    data_${data_hoje}
+    Type With Modifiers    cliente_base
+    Copy File Cliente Base  
     Press Special Key    ENTER
     Espera o Excel Abrir
     Alt F4
