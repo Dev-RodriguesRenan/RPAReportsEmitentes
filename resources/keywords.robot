@@ -3,6 +3,7 @@ Documentation   Arquivo keywords para o Robô de relatórios do BMG Crédito
 Library       SikuliLibrary
 Resource    ./variables.robot
 Library    ./keywords.py
+Library    OperatingSystem
 
 *** Keywords ***
 # Carrega as imagens do sistema
@@ -48,45 +49,42 @@ Selecionar Cliente
 Confirmar
     Wait Until Screen Contain    yes_icon.png    12
     Click    yes_icon.png
-# Procura o botão de cancelar, enquanto ele existir o loop continua
-Procurar Icone
-    [Arguments]    ${icon}
-    ${icon_exists}=    Exists    ${icon}.png    12
-    WHILE    ${icon_exists} == 'True'
-        Log    ${icon} não encontrado
-        ${icon_exists}=    Exists    ${icon}.png    12
-    END
-    Log    ${icon} encontrado
 Espera o Cancelar Desaparecer
-    ${cancel_icon}    Exists    cancel_icon.png    12
-    WHILE    ${cancel_icon} == 'True'
-        Log    ${cancel_icon} não encontrado
-        ${cancel_icon}    Exists    cancel_icon.png    12
-        IF    ${cancel_icon} == 'False'
-            BREAK
-        END
-    END
+    Wait Until Screen Not Contain    cancel_icon.png    3600
+    Log    O Botão Cancelar Sumiu!!    level=DEBUG
 # Aperta em exporta a planilha
 Exportar Planilha
     Wait Until Screen Contain    export_icon.png    12
     Click    export_icon.png
 # Espera o Excel abrir
 Espera o Excel Abrir
-    ${isExcel}    Exists    is_opened_excel_icon.png    8
-    WHILE    ${isExcel} == 'False'
-        Sleep    3
-        ${isExcel}    Exists    is_opened_excel_icon.png    8
-        IF    ${isExcel} == 'True'
-            BREAK
-        END
+    ${encontrado}=    Run Keyword And Return Status    Wait Until Screen Contain    is_opened_excel_icon.png    120
+    WHILE    ${encontrado} == False
+        Sleep    2
+        ${encontrado}=    Run Keyword And Return Status    Wait Until Screen Contain    is_opened_excel_icon.png    120
+    END
+Espera o Icone de Abrir o Excel
+    ${encontrado}=    Run Keyword And Return Status    Wait Until Screen Contain    alert_excel_icon.png    120
+    WHILE    ${encontrado} == False
+        Sleep    2
+        ${encontrado}=    Run Keyword And Return Status    Wait Until Screen Contain    alert_excel_icon.png    120
     END
 # Abre o Excel
 Abrir o Excel
-    Procurar Icone    alert_excel_icon
+    Espera o Icone de Abrir o Excel
     Sleep    10    Espera 10s para o excel abrir
     Wait Until Screen Contain    alert_excel_icon.png    10
     Click    alert_excel_icon.png
     Espera o Excel Abrir
+Verifica se vai sobreescrever o arquivo
+    ${is_opened}=    Run Keyword And Return Status    Wait Until Screen Contain    alert_overwrite_icon.png    10
+    IF    ${is_opened} == True
+        Press Special Key    LEFT
+        Sleep    2
+        Press Special Key    ENTER
+    ELSE
+        Log    O arquivo cliente_base já existe. Não é necessário sobrescrever.
+    END
 # Salva a planilha
 Salvar Planilha
     Press Keys    ctrl    b
@@ -94,10 +92,11 @@ Salvar Planilha
     Click    resources_icon.png
     Wait Until Screen Contain    is_opened_explore_icon.png    15
     Type With Modifiers    cliente_base
-    Copy File Cliente Base  
     Press Special Key    ENTER
+    Verifica se vai sobreescrever o arquivo
     Espera o Excel Abrir
     Alt F4
+    Copy File Cliente Base  
 # Muda o foco para a janela do sistema FJ Frigo
 Switch Para Janela FJ Frigo
     ${status}=    Switch To FJ Frigo

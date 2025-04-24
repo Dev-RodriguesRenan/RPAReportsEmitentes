@@ -26,7 +26,7 @@ def switch_to_fj_frigo():
     while True:
         windows = Desktop(backend="uia").windows()
         for win in windows:
-            if "Atualização" in win.window_text():
+            if "atualização" in win.window_text():
                 win.set_focus()
                 time.sleep(0.5)
                 pyautogui.press("right")
@@ -34,7 +34,7 @@ def switch_to_fj_frigo():
                 continue
             if (
                 "FJFrigo" in win.window_text()
-                and not "Atualização" in win.window_text()
+                and not "atualização" in win.window_text()
             ):
                 win.set_focus()
                 return True
@@ -42,6 +42,7 @@ def switch_to_fj_frigo():
     return False
 
 def copy_file_cliente_base():
+    os.remove('C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx')
     os.rename(
         "C:\\Users\\use\\Documents\\cliente_base.xlsx",
         "C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx",
