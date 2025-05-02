@@ -51,7 +51,7 @@ Confirmar
     Click    yes_icon.png
 Espera o Cancelar Desaparecer
     Wait Until Screen Not Contain    cancel_icon.png    3600
-    Log    O Botão Cancelar Sumiu!!    level=DEBUG
+    Log    O Botão Cancelar Sumiu!!    
 # Aperta em exporta a planilha
 Exportar Planilha
     Wait Until Screen Contain    export_icon.png    12
