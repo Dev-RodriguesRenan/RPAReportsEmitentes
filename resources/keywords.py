@@ -1,5 +1,6 @@
 import datetime
 import os
+import sys
 import pyautogui
 from pywinauto import Desktop
 import time
@@ -47,3 +48,14 @@ def copy_file_cliente_base():
         "C:\\Users\\use\\Documents\\cliente_base.xlsx",
         "C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx",
     )
+    print("Arquivo cliente_base copiado com sucesso para pasta data.")
+
+def kill_process():
+    try:
+        os.system('taskkill /F /IM fjfrigo.exe')
+        os.system('taskkill /F /IM EXCEL.EXE')
+        os.system('taskkill /F /IM FJUpdaterLocal.exe')
+        return True
+    except Exception as e:
+        print(f"Erro ao matar o processo: {e}")
+        return False

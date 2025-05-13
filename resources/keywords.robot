@@ -112,3 +112,6 @@ Fechar Sistema FJ Frigo
         Wait Until Screen Contain    fj_exit_icon.png    10
         Click    fj_exit_icon.png
     END 
+
+Fechar Sistemas CMD
+    Kill Process
