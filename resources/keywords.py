@@ -17,7 +17,6 @@ def alt_f4():
 def get_current_datetime():
     return datetime.datetime.now().strftime("%d_%m_%Y %H_%M_%S")
 
-
 def write_text(text):
     pyautogui.write(text, interval=0.1)
 
@@ -43,12 +42,15 @@ def switch_to_fj_frigo():
     return False
 
 def copy_file_cliente_base():
+    print(">>> Copiando arquivo cliente_base.xlsx\
+          >>> De: C:\\Users\\use\\Documents\\" \
+          ">>> Para: C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\")
     os.remove('C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx')
     os.rename(
         "C:\\Users\\use\\Documents\\cliente_base.xlsx",
         "C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx",
     )
-    print("Arquivo cliente_base copiado com sucesso para pasta data.")
+    print(">>> Arquivo cliente_base copiado com sucesso para pasta data.")
 
 def kill_process():
     try:

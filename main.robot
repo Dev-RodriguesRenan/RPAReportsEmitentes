@@ -2,13 +2,16 @@
 Documentation   Arquivo base para o Robô de relatórios do BMG Crédito
 Resource        resources/keywords.robot
 Library       SikuliLibrary 
+Library    DateTime
 Test Setup    Carragar Imagens
 Test Teardown    Fechar Sistemas CMD
 *** Variables ***
 ${is_executed}    False
+
 *** Test Cases ***
 Caso de Baixar Planilha
     [Documentation]    Baixa a planilha do sistema FJ Frigo
+    ${DATE_CURRENT}    Get Current Datetime
     WHILE    ${is_executed} == False    
         TRY
                 Log    Iniciando o robô    console=True
@@ -32,7 +35,7 @@ Caso de Baixar Planilha
                 CONTINUE
         END
     END
-    Log    Programa executado com sucesso    console=True
+    Log    Programa executado com sucesso ${DATE_CURRENT}    console=True
         
                 
 
