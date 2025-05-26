@@ -40,7 +40,7 @@ def verify_exists_update():
                         "pois existe janela de Controle administrativo " \
                         "ou Login do usuário"
                     )
-        time.sleep(10)
+        time.sleep(1)
 
 
 if __name__ == "__main__":
