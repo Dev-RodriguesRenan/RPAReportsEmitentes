@@ -1,5 +1,6 @@
 import datetime
 import os
+import subprocess
 import sys
 import pyautogui
 from pywinauto import Desktop
@@ -61,3 +62,11 @@ def kill_process():
     except Exception as e:
         print(f"Erro ao matar o processo: {e}")
         return False
+    
+def execute_tests(task:str):
+    """Executa uma tarefa especificada.
+
+    Args:
+        task (str): Caminho ou comando da tarefa a ser executada.
+    """
+    subprocess.run([task])

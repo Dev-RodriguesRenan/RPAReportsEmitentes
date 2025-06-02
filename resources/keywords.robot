@@ -13,7 +13,7 @@ Executar FJ Frigo
     Press Special Key    WIN
     Sleep    2
     Type With Modifiers    fjfrigo
-    Sleep    2
+    Sleep    5
     Press Special Key    ENTER
 # Abre o sistema da FJ-FRIGO
 Abrir Sistema FJ Frigo
