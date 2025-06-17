@@ -1,30 +1,32 @@
 *** Settings ***
-Documentation   Arquivo de atualização do Robô de relatórios do BMG Crédito
-Library       SikuliLibrary
-Resource    ./variables.robot
-Resource    keywords.robot
-Library    ./verificator.py
-Library    keywords.py
-Test Setup    Carragar Imagens
-*** Keywords ***
-# Verifica se o Robô de relatórios do BMG Crédito está atualizado
-Atualizar Sistema
-    # Abre o sistema FJ Frigo     
-    Executar FJ Frigo
+Library         SikuliLibrary
+Library         keywords.py
+Library         verificator.py
+Resource        keywords.robot
+Test Setup        Carragar Imagens
 
-    # Aguarda a tela do FJ Frigo aparecer e aguarda o tempo para aparecer o FJUpdater
+
+*** Keywords ***
+Open FJ Frigo
+    Press Special Key    WIN
+    Sleep    3s
+
+    Input Text    ${EMPTY}    fjfrigo
+    Sleep    5s
+    Press Special Key    ENTER
+Verify And Update FJ Frigo
     Wait Until Screen Contain    fjbanner_icon.png    30
-    Sleep    20s
-    # Atualiza o sistema caso exista o FJUpdater
-    ${atualizacao}    Update
-    IF    ${atualizacao} == 'True'
-        Log    message=O Robô de relatórios do BMG Crédito atualizado com sucesso!    console=True 
+    Sleep    15s    Aguarda para caso apareça a tela de update
+    # Verifica se a tela de update está presente
+    ${update}    Update Fj Frigo
+    IF    ${update} == True
+        Log    \nFJFRIGO ATUALIZADO...\n    level=DEBUG    console=True
     ELSE
-        Log    message=O Robô de relatórios do BMG Crédito já está atualizado!    console=True 
+        Log    \nFJFRIGO NÃO FOI ATUALIZADO...\n    level=DEBUG    console=True
+        Alt F4
     END
 
 *** Test Cases ***
-# Verifica se o Robô de relatórios do BMG Crédito está atualizado
-Verificar e Atualizar
-    Atualizar Sistema
-    Alt F4
+Updater
+    Open FJ Frigo
+    Verify And Update FJ Frigo

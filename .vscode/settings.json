@@ -10,7 +10,8 @@
     "files.exclude": {
         "**/__pycache__": true,
         "**/Sikuli*": true,
-        "**/*.xml": true
+        "**/*.xml": true,
+        "**/.ruff*":true
     },
     "terminal.integrated.defaultProfile.windows": "Git Bash"
 }
