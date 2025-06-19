@@ -47,7 +47,7 @@ def verify_exists_update(duration_hours=2):
     """
     end_hours = datetime.datetime.now() + datetime.timedelta(hours=duration_hours)
     while datetime.datetime.now() < end_hours:
-        LOGGER_HANDLER.info(">>> Verificando se existe janela de atualização", end="\r")
+        LOGGER_HANDLER.info(">>> Verificando se existe janela de atualização")
         windows_list_activated = pywinauto.Desktop(backend="uia").windows()
         # Verifica se existe any janela com "Controle administrativo"
         has_controle_admin = any(
@@ -57,7 +57,6 @@ def verify_exists_update(duration_hours=2):
         )
         LOGGER_HANDLER.info(
             f"{time.strftime('%X')} >>> Controle administrativo/Login de usuário {has_controle_admin}",
-            end="\r",
         )
         # Se não existir janela de Controle administrativo, procura janela de atualização
         if not has_controle_admin:
@@ -82,7 +81,7 @@ def verify_exists_update(duration_hours=2):
                     LOGGER_HANDLER.info(
                         f"{time.strftime('%X')} >>> Ignorada com sucesso!!"
                     )
-
+        time.sleep(1)
 
 if __name__ == "__main__":
-    verify_exists_update()
+    verify_exists_update(duration_hours=3)

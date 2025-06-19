@@ -2,7 +2,7 @@ import os
 import sys
 import subprocess
 import schedule
-from logger import LOGGER_HANDLER
+from resources.logger import LOGGER_HANDLER
 
 BASE_PATH = "C:\\Users\\use\\Desktop\\vjbots-robot-fjfrigo\\"
 PYTHON_PATH_VENV = os.path.join(BASE_PATH, "venv\\Scripts\\python.exe")

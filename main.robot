@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation   Arquivo base para o Robô de relatórios do BMG Crédito
 Resource        resources/keywords.robot
-Library       resources/keywords.py
+Library         resources/keywords.py
 Library       SikuliLibrary 
 Library    DateTime
 Test Setup    Carragar Imagens
@@ -13,7 +13,6 @@ ${is_executed}    False
 Caso de Baixar Planilha
     [Documentation]    Baixa a planilha do sistema FJ Frigo
     ${DATE_CURRENT}    Get Current Datetime
-    Execute Tests    updater.bat    
     WHILE    ${is_executed} == False    
         TRY
                 Log    Iniciando o robô    console=True

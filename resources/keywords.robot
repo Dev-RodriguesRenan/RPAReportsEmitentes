@@ -51,7 +51,7 @@ Confirmar
     Click    yes_icon.png
 Espera o Cancelar Desaparecer
     Wait Until Screen Not Contain    cancel_icon.png    3600
-    Log    O Botão Cancelar Sumiu!!    
+    Log    O Botão Cancelar Sumiu!!    level=DEBUG     console=True    
 # Aperta em exporta a planilha
 Exportar Planilha
     Wait Until Screen Contain    export_icon.png    12
@@ -72,10 +72,12 @@ Espera o Icone de Abrir o Excel
 # Abre o Excel
 Abrir o Excel
     Espera o Icone de Abrir o Excel
+    Log   O Excel apareceu!!    console=True
     Sleep    10    Espera 10s para o excel abrir
     Wait Until Screen Contain    alert_excel_icon.png    10
     Click    alert_excel_icon.png
     Espera o Excel Abrir
+    Log    O Excel abriu com sucesso!!    console=True
 Verifica se vai sobreescrever o arquivo
     ${is_opened}=    Run Keyword And Return Status    Wait Until Screen Contain    alert_overwrite_icon.png    10
     IF    ${is_opened} == True
