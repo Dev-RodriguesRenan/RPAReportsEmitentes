@@ -1,10 +1,11 @@
 import datetime
 import os
 import subprocess
-import pyautogui
-from pywinauto import Desktop
-from logger import LOGGER_HANDLER
 import time
+
+import pyautogui
+from logger import LOGGER_HANDLER
+from pywinauto import Desktop
 
 
 def press_keys(key1, key2):
@@ -44,18 +45,37 @@ def switch_to_fj_frigo():
     return False
 
 
-def copy_file_cliente_base():
-    LOGGER_HANDLER.info(
-        ">>> Copiando arquivo cliente_base.xlsx\
-          >>> De: C:\\Users\\use\\Documents\\"
-        ">>> Para: C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\"
-    )
-    os.remove("C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx")
-    os.rename(
-        "C:\\Users\\use\\Documents\\cliente_base.xlsx",
-        "C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx",
-    )
-    LOGGER_HANDLER.info(">>> Arquivo cliente_base copiado com sucesso para pasta data.")
+def copy_file_cliente_base(
+    src="C:\\Users\\use\\Documents",
+    dst="C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data",
+):
+    try:
+        if not os.path.exists(src) or not os.path.exists(dst):
+            LOGGER_HANDLER.error(
+                f"Pasta(s) não encontrada! verifique em:\n{src}\n{dst}"
+            )
+            return
+        LOGGER_HANDLER.info(
+            f">>> Copiando arquivo cliente_base.xlsx\n>>> De: {src}\n>>> Para: {dst}"
+        )
+        if os.path.exists(f"{dst}\\cliente_base.xlsx"):
+            os.rename(
+                f"{dst}\\cliente_base.xlsx",
+                f"{dst}\\clients\\cliente_base_{get_current_datetime()}.xlsx",
+            )
+        else:
+            LOGGER_HANDLER.info(
+                ">>> Arquivo cliente_base.xlsx não encontrado para EXCLUSÃO, continuando..."
+            )
+        os.rename(
+            f"{src}\\cliente_base.xlsx",
+            f"{dst}\\cliente_base.xlsx",
+        )
+        LOGGER_HANDLER.info(
+            ">>> Arquivo cliente_base copiado com sucesso para pasta data."
+        )
+    except Exception as e:
+        LOGGER_HANDLER.error(f"Erro ao copiar arquivo cliente_base: {e}")
 
 
 def kill_process():

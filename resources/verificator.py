@@ -1,9 +1,9 @@
+import datetime
 import os
 import time
+
 import pyautogui
 import pywinauto
-import datetime
-
 from logger import LOGGER_HANDLER
 
 
@@ -82,6 +82,7 @@ def verify_exists_update(duration_hours=2):
                         f"{time.strftime('%X')} >>> Ignorada com sucesso!!"
                     )
         time.sleep(1)
+
 
 if __name__ == "__main__":
     verify_exists_update(duration_hours=3)

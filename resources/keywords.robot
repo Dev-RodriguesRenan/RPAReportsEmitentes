@@ -1,14 +1,10 @@
 *** Settings ***
 Documentation   Arquivo keywords para o Robô de relatórios do BMG Crédito
 Library       SikuliLibrary
-Resource    ./variables.robot
+Resource    ./shares.robot
 Library    ./keywords.py
-Library    OperatingSystem
 
 *** Keywords ***
-# Carrega as imagens do sistema
-Carragar Imagens 
-    Add Image Path    ${IMAGE_DIR}
 Executar FJ Frigo
     Press Special Key    WIN
     Sleep    2
@@ -32,30 +28,24 @@ Passar TAB
     END
 # Seleciona o campo emitentes no menu da fjfrigo principal
 Abrir os Emitentes
-    Wait Until Screen Contain    person_icon.png    10
-    Click    person_icon.png
+    Esperar e Clicar    person_icon.png    10
 # Seleciona o campo +999 emitentes no menu da fjfrigo > emitentes
 Selecionar Emitentes
-    Wait Until Screen Contain    select_emitente_icon.png    10
-    Click    select_emitente_icon.png
+    Esperar e Clicar    select_emitente_icon.png    10
 # Seleciona o campo cliente no submenu de emitentes
 Selecionar Cliente
-    Wait Until Screen Contain    select_client_icon.png    10
-    Click    select_client_icon.png
+    # Esperar e Clicar    select_client_icon.png    10
     # TODO: Descomentar o código abaixo quando for necessário testes com uma base menor 
-    # Wait Until Screen Contain    drivers_icon.png    10
-    # Click    drivers_icon.png
+    Esperar e Clicar    drivers_icon.png    10
 # Aperta em confirmar após a keyword
 Confirmar
-    Wait Until Screen Contain    yes_icon.png    12
-    Click    yes_icon.png
+    Esperar e Clicar    yes_icon.png    12
 Espera o Cancelar Desaparecer
     Wait Until Screen Not Contain    cancel_icon.png    3600
     Log    O Botão Cancelar Sumiu!!    level=DEBUG     console=True    
 # Aperta em exporta a planilha
 Exportar Planilha
-    Wait Until Screen Contain    export_icon.png    12
-    Click    export_icon.png
+    Esperar e Clicar    export_icon.png    12
 # Espera o Excel abrir
 Espera o Excel Abrir
     ${encontrado}=    Run Keyword And Return Status    Wait Until Screen Contain    is_opened_excel_icon.png    120
@@ -74,8 +64,7 @@ Abrir o Excel
     Espera o Icone de Abrir o Excel
     Log   O Excel apareceu!!    console=True
     Sleep    10    Espera 10s para o excel abrir
-    Wait Until Screen Contain    alert_excel_icon.png    10
-    Click    alert_excel_icon.png
+    Esperar e Clicar    alert_excel_icon.png    10
     Espera o Excel Abrir
     Log    O Excel abriu com sucesso!!    console=True
 Verifica se vai sobreescrever o arquivo
@@ -85,20 +74,21 @@ Verifica se vai sobreescrever o arquivo
         Sleep    2
         Press Special Key    ENTER
     ELSE
-        Log    O arquivo cliente_base já existe. Não é necessário sobrescrever.
+        Log    O arquivo cliente_base já existe. Não é necessário sobrescrever.    console=True
     END
 # Salva a planilha
 Salvar Planilha
     Press Keys    ctrl    b
-    Wait Until Screen Contain    resources_icon.png    10
-    Click    resources_icon.png
+    Esperar e Clicar    resources_icon.png    10
     Wait Until Screen Contain    is_opened_explore_icon.png    15
     Type With Modifiers    cliente_base
     Press Special Key    ENTER
     Verifica se vai sobreescrever o arquivo
     Espera o Excel Abrir
+    Sleep    20s    Espera 20s para o excel salvar a planilha
     Alt F4
-    Copy File Cliente Base  
+    Copy File Cliente Base
+    Log    Planilha salva com sucesso!!    console=True  
 # Muda o foco para a janela do sistema FJ Frigo
 Switch Para Janela FJ Frigo
     ${status}=    Switch To FJ Frigo
@@ -107,12 +97,10 @@ Switch Para Janela FJ Frigo
 Fechar Sistema FJ Frigo
     ${is_open}    Exists    fj_is_opened_icon.png    10
     IF    ${is_open} == 'True'
-       Wait Until Screen Contain    fj_exit_icon.png    10
-       Click    fj_exit_icon.png
+       Esperar e Clicar    fj_exit_icon.png    10
     ELSE
         Switch Para Janela FJ Frigo
-        Wait Until Screen Contain    fj_exit_icon.png    10
-        Click    fj_exit_icon.png
+        Esperar e Clicar    fj_exit_icon.png    10
     END 
 
 Fechar Sistemas CMD

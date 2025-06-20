@@ -1,0 +1,36 @@
+2025-06-20 16:16:52 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Copiando arquivo cliente_base.xlsx          >>> De: C:\Users\use\Documents\>>> Para: C:\Users\use\Desktop\BMG-Creditos-Bordero\data\
+2025-06-20 16:29:56 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Copiando arquivo cliente_base.xlsx
+>>> De: C:\Users\use\Documents
+>>> Para: C:\Users\use\Desktop\BMG-Creditos-Bordero\data
+2025-06-20 16:40:03 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Copiando arquivo cliente_base.xlsx
+>>> De: C:\Users\use\Documents
+>>> Para: C:\Users\use\Desktop\BMG-Creditos-Bordero\data
+2025-06-20 16:43:48 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Copiando arquivo cliente_base.xlsx
+>>> De: C:\Users\use\Documents
+>>> Para: C:\Users\use\Desktop\BMG-Creditos-Bordero\data
+2025-06-20 16:51:43 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Copiando arquivo cliente_base.xlsx
+>>> De: C:\Users\use\Documents
+>>> Para: C:\Users\use\Desktop\BMG-Creditos-Bordero\data
+2025-06-20 16:51:43 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - ERROR - Erro ao copiar o arquivo:
+[WinError 2] O sistema não pode encontrar o arquivo especificado: 'C:\\Users\\use\\Documents\\cliente_base.xlsx' -> 'C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx'
+Traceback (most recent call last):
+  File "c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\keywords.py", line 64, in copy_file_cliente_base
+        os.rename(
+        ~~~~~~~~~^
+        f"{src}\\cliente_base.xlsx",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        f"{dst}\\cliente_base.xlsx",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+FileNotFoundError: [WinError 2] O sistema não pode encontrar o arquivo especificado: 'C:\\Users\\use\\Documents\\cliente_base.xlsx' -> 'C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx'
+2025-06-20 17:00:24 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Copiando arquivo cliente_base.xlsx
+>>> De: C:\Users\use\Documents
+>>> Para: C:\Users\use\Desktop\BMG-Creditos-Bordero\data
+2025-06-20 17:00:24 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Arquivo cliente_base.xlsx não encontrado para EXCLUSÃO, continuando...
+2025-06-20 17:00:24 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - ERROR - [WinError 2] O sistema não pode encontrar o arquivo especificado: 'C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx'
+2025-06-20 17:04:12 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Arquivo cliente_base copiado com sucesso para pasta data.
+2025-06-20 17:10:50 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Copiando arquivo cliente_base.xlsx
+>>> De: C:\Users\use\Documents
+>>> Para: C:\Users\use\Desktop\BMG-Creditos-Bordero\data
+2025-06-20 17:10:50 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Arquivo cliente_base copiado com sucesso para pasta data.

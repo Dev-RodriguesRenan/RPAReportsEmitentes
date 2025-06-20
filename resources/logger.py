@@ -1,8 +1,9 @@
-import logging
-import colorama
-from colorama import Fore, Back, Style
-import os
 import datetime
+import logging
+import os
+
+import colorama
+from colorama import Back, Fore, Style
 
 # Inicializar colorama
 colorama.init(autoreset=True)
