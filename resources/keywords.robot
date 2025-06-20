@@ -34,9 +34,9 @@ Selecionar Emitentes
     Esperar e Clicar    select_emitente_icon.png    10
 # Seleciona o campo cliente no submenu de emitentes
 Selecionar Cliente
-    # Esperar e Clicar    select_client_icon.png    10
+    Esperar e Clicar    select_client_icon.png    10
     # TODO: Descomentar o código abaixo quando for necessário testes com uma base menor 
-    Esperar e Clicar    drivers_icon.png    10
+    # Esperar e Clicar    drivers_icon.png    10
 # Aperta em confirmar após a keyword
 Confirmar
     Esperar e Clicar    yes_icon.png    12
