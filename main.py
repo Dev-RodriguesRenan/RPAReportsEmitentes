@@ -64,6 +64,7 @@ if __name__ == "__main__":
             LOGGER_HANDLER.debug(
                 ">>> Argumento --debug detectado, iniciando os scripts principais (main.robot e updater.robot)..."
             )
+            run_robot_file(UPDATER_PATH)
             run_robot_file(MAIN_SCRIPT_PATH)
         elif sys.argv[1] == "--verify":
             LOGGER_HANDLER.debug(

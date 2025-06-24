@@ -40,7 +40,9 @@ Selecionar Cliente
 # Aperta em confirmar após a keyword
 Confirmar
     Esperar e Clicar    yes_icon.png    12
+    Sleep    2
 Espera o Cancelar Desaparecer
+    Sleep    3
     Wait Until Screen Not Contain    cancel_icon.png    3600
     Log    O Botão Cancelar Sumiu!!    level=DEBUG     console=True    
 # Aperta em exporta a planilha
@@ -85,7 +87,7 @@ Salvar Planilha
     Press Special Key    ENTER
     Verifica se vai sobreescrever o arquivo
     Espera o Excel Abrir
-    Sleep    20s    Espera 20s para o excel salvar a planilha
+    Sleep    20    Espera 20s para o excel salvar a planilha
     Alt F4
     Copy File Cliente Base
     Log    Planilha salva com sucesso!!    console=True  

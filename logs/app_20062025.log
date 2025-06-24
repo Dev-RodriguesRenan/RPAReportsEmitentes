@@ -34,3 +34,21 @@ FileNotFoundError: [WinError 2] O sistema não pode encontrar o arquivo especifi
 >>> De: C:\Users\use\Documents
 >>> Para: C:\Users\use\Desktop\BMG-Creditos-Bordero\data
 2025-06-20 17:10:50 - c:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Arquivo cliente_base copiado com sucesso para pasta data.
+2025-06-20 20:00:07 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - ['main.py', '--debug']
+2025-06-20 20:00:07 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - DEBUG - >>> Argumento --debug detectado, iniciando os scripts principais (main.robot e updater.robot)...
+2025-06-20 20:00:07 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - ERROR - Erro ao executar C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\updater.robot: Command '['C:\\Users\\use\\Desktop\\vjbots-robot-fjfrigo\\venv\\Scripts\\python.exe', 'C:\\Users\\use\\Desktop\\vjbots-robot-fjfrigo\\resources\\updater.robot']' returned non-zero exit status 1.
+2025-06-20 20:02:12 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - ['main.py', '--debug']
+2025-06-20 20:02:12 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - DEBUG - >>> Argumento --debug detectado, iniciando os scripts principais (main.robot e updater.robot)...
+2025-06-20 20:02:12 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - ERROR - Erro ao executar C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\updater.robot: Command '['C:\\Users\\use\\Desktop\\vjbots-robot-fjfrigo\\venv\\Scripts\\python.exe', 'C:\\Users\\use\\Desktop\\vjbots-robot-fjfrigo\\resources\\updater.robot']' returned non-zero exit status 1.
+2025-06-20 20:04:17 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - ['main.py', '--debug']
+2025-06-20 20:04:17 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - DEBUG - >>> Argumento --debug detectado, iniciando os scripts principais (main.robot e updater.robot)...
+2025-06-20 20:04:46 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - 20:04:46 >>> Janela de atualização encontrada, iremos atualizar o sistema
+2025-06-20 20:04:49 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - 20:04:49 >>> Janela de atualização encontrada e tecla 'enter' pressionada para atualizar o sistema
+2025-06-20 20:05:04 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\updater.robot executado com sucesso.
+2025-06-20 20:10:03 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - ['main.py', '--main']
+2025-06-20 20:10:03 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Argumento --main detectado, iniciando o script principal...
+2025-06-22 00:54:21 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - INFO - >>> Copiando arquivo cliente_base.xlsx
+>>> De: C:\Users\use\Documents
+>>> Para: C:\Users\use\Desktop\BMG-Creditos-Bordero\data
+2025-06-22 00:54:21 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - ERROR - Erro ao copiar arquivo cliente_base: [WinError 32] O arquivo já está sendo usado por outro processo: 'C:\\Users\\use\\Documents\\cliente_base.xlsx' -> 'C:\\Users\\use\\Desktop\\BMG-Creditos-Bordero\\data\\cliente_base.xlsx'
+2025-06-22 00:54:23 - C:\Users\use\Desktop\vjbots-robot-fjfrigo\resources\logger - ERROR - Erro ao executar C:\Users\use\Desktop\vjbots-robot-fjfrigo\main.robot: Command '['C:\\Users\\use\\Desktop\\vjbots-robot-fjfrigo\\venv\\Scripts\\python.exe', '-m', 'robot', '-d', 'results', 'C:\\Users\\use\\Desktop\\vjbots-robot-fjfrigo\\main.robot']' returned non-zero exit status 252.

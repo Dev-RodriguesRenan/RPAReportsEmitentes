@@ -9,14 +9,14 @@ Test Setup        Carragar Imagens
 *** Keywords ***
 Open FJ Frigo
     Press Special Key    WIN
-    Sleep    3s
+    Sleep    3
 
     Input Text    ${EMPTY}    fjfrigo
-    Sleep    5s
+    Sleep    5
     Press Special Key    ENTER
 Verify And Update FJ Frigo
     Wait Until Screen Contain    fjbanner_icon.png    30
-    Sleep    15s    Aguarda para caso apareça a tela de update
+    Sleep    15    Aguarda para caso apareça a tela de update
     # Verifica se a tela de update está presente
     ${update}    Update Fj Frigo
     IF    ${update} == True
