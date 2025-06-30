@@ -1,5 +1,6 @@
 import datetime
 import os
+import shutil
 import subprocess
 import time
 
@@ -58,8 +59,9 @@ def copy_file_cliente_base(
         LOGGER_HANDLER.info(
             f">>> Copiando arquivo cliente_base.xlsx\n>>> De: {src}\n>>> Para: {dst}"
         )
+        # Verifica se o arquivo cliente_base.xlsx já existe no destino
         if os.path.exists(f"{dst}\\cliente_base.xlsx"):
-            os.rename(
+            shutil.move(
                 f"{dst}\\cliente_base.xlsx",
                 f"{dst}\\clients\\cliente_base_{get_current_datetime()}.xlsx",
             )
@@ -67,7 +69,7 @@ def copy_file_cliente_base(
             LOGGER_HANDLER.info(
                 ">>> Arquivo cliente_base.xlsx não encontrado para EXCLUSÃO, continuando..."
             )
-        os.rename(
+        shutil.move(
             f"{src}\\cliente_base.xlsx",
             f"{dst}\\cliente_base.xlsx",
         )

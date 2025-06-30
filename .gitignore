@@ -2,7 +2,8 @@ venv
 .env
 __pycache__/
 results/
-log/
+logs/
+*.log
 *.xml
 Sikuli**
 *.html
