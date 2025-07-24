@@ -15,7 +15,8 @@ Executar FJ Frigo
 Abrir Sistema FJ Frigo
     Executar FJ Frigo  
     Wait Until Screen Contain    fjbanner_icon.png    30
-    Sleep    7    Espera 7s para contiar o processo
+    Selecionar Base de Dados    1 
+    Sleep    1   
     Passar TAB    3
     Write Text    ${password}
     Passar TAB    1

@@ -98,3 +98,7 @@ def execute_tests(task: str):
         task (str): Caminho ou comando da tarefa a ser executada.
     """
     subprocess.run([task])
+
+def click_at_location(cordinades:tuple):
+    print(f'click at {cordinades} - {type(cordinades)}')
+    pyautogui.click(*cordinades)

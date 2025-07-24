@@ -76,5 +76,5 @@ if __name__ == "__main__":
             "Aguarde o horario de execução do bot, ou execute com o argumento --update para atualizar o sistema."
         )
         schedule.every().sunday.at("12:00").do(run_robot_file, UPDATER_PATH)
-        schedule.every().sunday.at("12:10").do(run_python_file, VERIFICATOR_PATH)
         schedule.every().sunday.at("12:10").do(run_robot_file, MAIN_SCRIPT_PATH)
+        schedule.every().sunday.at("12:15").do(run_python_file, VERIFICATOR_PATH)
