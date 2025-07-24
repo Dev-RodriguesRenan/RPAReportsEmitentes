@@ -6,7 +6,7 @@ import schedule
 
 from resources.logger import LOGGER_HANDLER
 
-BASE_PATH = "C:\\Users\\use\\Desktop\\vjbots-robot-fjfrigo\\"
+BASE_PATH = "C:\\Users\\use\\Desktop\\robot-report-emitentes\\"
 PYTHON_PATH_VENV = os.path.join(BASE_PATH, "venv\\Scripts\\python.exe")
 MAIN_SCRIPT_PATH = os.path.join(BASE_PATH, "main.robot")
 UPDATER_PATH = os.path.join(BASE_PATH, "resources\\updater.robot")
